@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--- ICS2O-My first PWA --->
+<!--- ICS2O-Factorial addition --->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,18 +8,17 @@
     <meta name="keywords" content="mths, ics2o" />
     <meta name="author" content="Alex Nelson" />
     <meta name="theme-color" content="#FFFFFF" />
-    <title>GitHub page as PWA template</title>
+    <!-- PWA Code -->
     <link
       rel="canonical"
       href="https://Alex-Nelson-1.github.io/ICS2O-UNIT5-07-JS-WHILE-LOOPS/"
     />
-    <link
-      rel="manifest"
-      href="/ICS2O-UNIT5-07-JS-WHILE-LOOPS/manifest.webmanifest"
-    />
+    <link rel="manifest" href="/ICS2O-UNIT5-07-JS-WHILE-LOOPS/manifest.webmanifest" />
     <link rel="stylesheet" href="./css/styles.css" />
     <!--- None blocking for Lighthouse report --->
     <!--- https://stackoverflow.com/questions/32759272/how-to-load-css-asynchronously --->
+
+    <!-- Code making MDL work with the PWA code-->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -44,39 +43,50 @@
         href="https://code.getmdl.io/1.3.0/material.indigo-purple.min.css"
       />
     </noscript>
+    <!-- Favicon Code -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />  
+    <!-- Title -->
+    <title>Factorial Addition</title>
   </head>
-  <title>My first PWA</title>
   <body>
+    <!-- Referencing JS folder and MDL -->
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="./js/script.js"></script>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">My first PWA</span>
+          <span class="mdl-layout-title"
+            >Calculate the angles of your triangle</span
+          >
         </div>
       </header>
       <main class="mdl-layout__content">
-        <p></p>
-        <img
-          src="./images/notebook-animation.svg"
-          alt="Computer"
-          width="25%"
-          height="25%"
-        />
-        <p></p>
-        <!-- Raised button with ripple -->
+        <!--Text field accepts input for side length A-->
+        <form action="#">
+          First Number
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="^[\d]*$"
+              id="numberOne"
+            />
+            <!--This will control the textfields error message and label-->
+            <label class="mdl-textfield__label" for="numberOne">Number 1</label>
+            <span class="mdl-textfield__error">Numbers Only! No decimals.</span>
+          </div>
+        </form>
+        <!-- Accent-colored raised button that controls JS function -->
         <button
-          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-          onclick="myButtonClicked()"
+          class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent"
+          onclick="adding()"
         >
-          Say "Hello, World!"
+          Factorial adding
         </button>
-        <!-- basic text -->
-        <p></p>
-        <div id="hello-world"></div>
+        <div id="output"></div>
+        <div id="restart"></div>
       </main>
     </div>
   </body>
