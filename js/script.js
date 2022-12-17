@@ -16,13 +16,14 @@ if (navigator.serviceWorker) {
 /**
  * This function runs an algorithm like factorial but with addtion instead of multiplication.
  */
-function adding() { 
+function adding() {
   //variables
   let numberOne = parseFloat(document.getElementById("numberOne").value)
   let sum = null
   //restart in number is negative
   if (numberOne < 0) {
-  document.getElementById("restart").innerHTML = "Number is negative. Please reload the page."
+    document.getElementById("restart").innerHTML =
+      "Number is negative. Please reload the page."
   }
   //Factorial adding function
   else {
@@ -31,7 +32,6 @@ function adding() {
       numberOne = numberOne - 1
     }
   }
-  //output 
+  //output
   document.getElementById("output").innerHTML = sum
 }
-
